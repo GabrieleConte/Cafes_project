@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, json
+from flask import Flask, render_template, json
 from flask_wtf import FlaskForm
 from wtforms import StringField
 import pandas as pd
@@ -29,7 +29,7 @@ class CafeForm(FlaskForm):
 # all Flask routes below
 @app.route("/")
 def home():
-    return render_template("templates/index.html")
+    return render_template("index.html")
 
 
 @app.route('/addcafes/add', methods=["GET", "POST"])
