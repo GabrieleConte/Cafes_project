@@ -54,9 +54,9 @@ def add_cafe():
             new_power = new_power + "️🔌"
         row = [cafename, location, opened, close, new_coffe, new_wifi,new_power]
         new_row=pd.DataFrame([row],columns=[0,1,2,3,4,5,6])
-        df = pd.read_csv("./static/assets/cafe_data.csv", header=None)
+        df = pd.read_csv("api/static/assets/cafe_data.csv", header=None)
         df = df.append(new_row, ignore_index=True)
-        df.to_csv("./static/assets/cafe_data.csv", index=False, header=False)
+        df.to_csv("api/static/assets/cafe_data.csv", index=False, header=False)
         return json.dumps({'success': True}), 200, {'ContentType': 'application/json'},
     except:
         print(form.errors)
